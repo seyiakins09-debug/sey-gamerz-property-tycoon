@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: sey-gamerz-property-tycoon
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start

@@ -1,0 +1,1 @@
+{"name":"sey-gamerz-property-tycoon","version":"1.0.0","description":"SEY GAMERZ PROPERTY TYCOON multiplayer game","main":"server.js","scripts":{"start":"node server.js"},"dependencies":{"express":"^4.21.2","socket.io":"^4.8.1"}}
