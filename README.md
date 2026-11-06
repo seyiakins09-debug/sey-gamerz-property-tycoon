@@ -1,30 +1,24 @@
-# SEY GAMERZ PROPERTY TYCOON — Economy Upgrade
+# SEY GAMERZ PROPERTY TYCOON — Financial Update
 
-## Changes included
-- Property sale no longer returns only land value plus 70% of construction cost.
-- Selling returns 100% of total investment (land + construction) plus district appreciation:
-  - Rural: +5%
-  - Suburban: +10%
-  - Commercial: +20%
-  - Luxury: +30%
-- Construction/material prices vary by district:
-  - Rural: ×1.00
-  - Suburban: ×1.25
-  - Commercial: ×1.75
-  - Luxury: ×2.50
-- Higher-tier districts have higher land income, construction costs, and rental rates.
-- Land income pays every 1 minute.
-- Completed-property rental income pays every 30 seconds.
-- Dashboard labels show the revised cadence, construction multiplier, appreciation, and estimated resale value.
+## Financial rules included
+- Starting capital is spendable Cash Balance.
+- Land purchase and construction/material purchases deduct from Cash Balance.
+- Land income (every 1 minute) and rental income (every 30 seconds) are added to Profit, not Cash Balance.
+- Profit is not spendable for purchases unless the player manually converts it.
+- Manual Profit-to-Cash conversion applies a 30% penalty: 70% of the converted amount is added to Cash Balance and 30% is recorded in Loss. The full converted amount is deducted from Profit.
+- When selling property, 100% of the original land + construction investment returns to Cash Balance. Only district appreciation profit is added to Profit.
+- When the 40-minute set timer expires, all unsold properties are removed and their original total investment is added to Loss. Their income stops. Existing Profit remains in the Profit column.
+- Leaderboard and host console show Cash Balance, Profit, Loss, and property count.
+
+## Existing property economy retained
+- District land prices, construction/material multipliers, blueprints, land income, rental rates, and district appreciation remain as before.
+- Land income pays every 1 minute; completed property rental income pays every 30 seconds.
+- Player reconnection restores their existing room progress.
 
 ## Deployment
-1. Extract the ZIP.
-2. Keep `server.js`, `package.json`, and `render.yaml` in the project root.
-3. Keep `app.js`, `index.html`, and `style.css` inside the `public/` folder.
-4. Run `npm install`, then `npm start`.
-5. Deploy the folder/repository to Render using the included `render.yaml`.
+1. Keep `server.js`, `package.json`, and `render.yaml` in the project root.
+2. Keep `app.js`, `index.html`, and `style.css` in the `public/` folder.
+3. Run `npm install`, then `npm start`.
+4. Deploy to Render using the included `render.yaml`.
 
-## Notes
-- The game uses virtual currency.
-- The server source and client JavaScript passed Node syntax checks.
-- This is a code-level validation; a live multiplayer deployment was not performed here.
+Virtual currency only. No live multiplayer deployment test was performed; server and client JavaScript syntax checks passed.
